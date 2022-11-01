@@ -1,5 +1,6 @@
 import React from 'react';
 import NavBar from "../components/NavBar";
+import './WayPage.css';
 
 export default function WayPage() {
 
@@ -8,7 +9,6 @@ export default function WayPage() {
             <header className="Way-header">
                 <h1 className={"Way-title"}> Choose UR Way </h1>
                 <NavBar/>
-
             </header>
         </div>
     )

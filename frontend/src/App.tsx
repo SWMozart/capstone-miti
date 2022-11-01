@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
-import {HashRouter, Link, Route, Routes} from "react-router-dom";
+import {HashRouter, Route, Routes} from "react-router-dom";
 import LocationPage from "./pages/LocationPage";
-import SchoolPage from "./pages/SchoolPage";
+import TrainingPage from "./pages/TrainingPage";
 import ShopPage from "./pages/ShopPage";
 import WayPage from "./pages/WayPage";
 import LoginPage from "./pages/LoginPage";
@@ -15,7 +15,7 @@ function App() {
                 <Route path ={"/"} element = {<LoginPage/>}/>
                 <Route path ={"/way"} element = {<WayPage/>}/>
                 <Route path ={"/place"} element = {<LocationPage/>}/>
-                <Route path ={"/school"} element = {<SchoolPage/>}/>
+                <Route path ={"/training"} element = {<TrainingPage/>}/>
                 <Route path ={"/shops"} element = {<ShopPage/>}/>
             </Routes>
         </HashRouter>
