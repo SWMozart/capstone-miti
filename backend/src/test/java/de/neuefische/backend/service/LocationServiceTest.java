@@ -23,18 +23,25 @@ class LocationServiceTest {
     private final LocationService locationService = new LocationService(locationRepo, idService);
 
     @Test
-    void addLocation_ShouldReturn_AddedLocation(){
+    void addNewLocation_ShouldReturn_AddedLocation(){
         //GIVEN
-        Location location = new Location("1", 100, 200, "photo1", "Nike Platz", "4");
-        when(idService.generateId()).thenReturn("1", "2");
-        when(locationRepo.findAll())
-                .thenReturn(List.of(location));
+        LocationDTO locationDTO = new LocationDTO(100, 200, "photo1", "Nike Platz", "4");
+        when(idService.generateId()).thenReturn("1");
+        when(locationRepo.save(any()))
+                .thenReturn(Location.builder()
+                        .id("1")
+                        .lat(locationDTO.getLat())
+                        .lon(locationDTO.getLon())
+                        .photo(locationDTO.getPhoto())
+                        .name(locationDTO.getName())
+                        .rating(locationDTO.getRating())
+                        .build());
 
         //WHEN
-        Location actual = locationService.addNewLocation(new LocationDTO());
+        Location actual = locationService.addNewLocation(locationDTO);
 
         //THEN
-        Location expected = new Location("2", 300, 400, "photo2", "Stadtgarten", "3");
+        Location expected = new Location("1", 100, 200, "photo1", "Nike Platz", "4");
         assertEquals(expected, actual);
     }
 
