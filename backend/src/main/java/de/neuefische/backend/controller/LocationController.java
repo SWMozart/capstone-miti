@@ -1,6 +1,7 @@
 package de.neuefische.backend.controller;
 
 import de.neuefische.backend.model.Location;
+import de.neuefische.backend.model.LocationDTO;
 import de.neuefische.backend.service.LocationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -19,8 +20,8 @@ public class LocationController {
     }
 
     @PostMapping
-    public Location addLocation(@RequestBody Location location) {
-        return locationService.addLocation(location);
+    public Location addLocation(@RequestBody LocationDTO locationDTO) {
+        return locationService.addNewLocation(locationDTO);
     }
 
     @GetMapping

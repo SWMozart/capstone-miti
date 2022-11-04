@@ -16,6 +16,9 @@ public class Location {
     @Id
     private String id;
 
-    private String place;
+    private double lat;
+    private double lon;
     private String photo;
+    private String name;
+    private String rating;
 }
