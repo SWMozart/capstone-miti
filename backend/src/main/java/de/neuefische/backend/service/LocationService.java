@@ -21,8 +21,7 @@ public class LocationService {
     }
 
     public List<Location> getAllLocations() {
-        List<Location> locations = locationRepo.findAll();
-        return locations;
+        return locationRepo.findAll();
     }
 
     public Location addNewLocation(LocationDTO locationDTO) {
