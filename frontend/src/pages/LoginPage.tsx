@@ -16,20 +16,19 @@ export default function LoginPage() {
 
 
     return (
-        <>
+        <div className={"buttonflipper"}>
             {!me &&
     <ReactCardFlip isFlipped={isFlipped} flipDirection={"horizontal"}>
-    <div>
+
         <div className={"front"}>
-    <button onClick={handleLoginButton}>Login</button>
-        <button onClick={handleRegisterButton}>Sign Up</button>
-            <div>
-                <Link to={"/way"}><button>Guest</button></Link>
+    <button className={"LB"} onClick={handleLoginButton}>Login</button>
+        <button className={"RB"} onClick={handleRegisterButton}>Sign Up</button>
+            <button className={"GB2"}>Guest</button>
+            <div className={"GB1"}>
             </div>
         </div>
-    </div>
 
-    <div>
+
     <div className={"back"}>
         {
             isLoginClick ?
@@ -40,26 +39,24 @@ export default function LoginPage() {
                     <Link to={"/way"}><button onClick={handleLogin}>Done</button></Link>
                 </div>
 :
-    <div className={"register-field"}>
-        <input value={newUsername} onChange={event => setNewUsername(event.target.value)}/>
-        <input type="password" value={newPassword}
-               onChange={event => setNewPassword(event.target.value)}/>
-        <Link to={"/way"}><button onClick={handleRegister}>Done</button></Link>
+            <div className={"register-field"}>
+                <input value={newUsername} onChange={event => setNewUsername(event.target.value)}/>
+                <input type="password" value={newPassword}
+                       onChange={event => setNewPassword(event.target.value)}/>
+                <Link to={"/way"}><button onClick={handleRegister}>Done</button></Link>
+            </div>
+        }
     </div>
-}
-    </div>
-    </div>
-
     </ReactCardFlip>
-}
+            }
     {me &&
     <>
-    <div className={"login-as"}>
+    <div >
         <p>{me}</p>
-    <button onClick={handleLogout}>LogOut</button>
+    <button className={"login-as"} onClick={handleLogout}>LogOut</button>
     </div>
     </>
     }
-    </>
+    </div>
         )
 }
