@@ -5,3 +5,11 @@
     background-position: center;
     background-attachment: fixed;
 }
+.Shop-title {
+    justify-content: center;
+    align-items: center;
+    font-family: "Snell Roundhand";
+    font-size: 35px;
+    color: #ffffff;
+    background-color: black;
+}

@@ -16,16 +16,14 @@ export default function LoginPage() {
 
 
     return (
-        <div className={"buttonflipper"}>
+        <div className={"Start"}>
             {!me &&
     <ReactCardFlip isFlipped={isFlipped} flipDirection={"horizontal"}>
 
         <div className={"front"}>
     <button className={"LB"} onClick={handleLoginButton}>Login</button>
         <button className={"RB"} onClick={handleRegisterButton}>Sign Up</button>
-            <button className={"GB2"}>Guest</button>
-            <div className={"GB1"}>
-            </div>
+            <button className={"GB"}>Guest</button>
         </div>
 
 

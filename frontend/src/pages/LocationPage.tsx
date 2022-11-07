@@ -1,8 +1,17 @@
-import {MapContainer, Marker, Popup, TileLayer, useMap} from "react-leaflet";
-import L,{LatLngExpression} from "leaflet";
 import "leaflet/dist/leaflet.css";
+import './LocationPage.css';
+import React from "react";
+import LocMap from "../components/LocMap";
+import {Location} from "../model/Location";
+import {MapContainer, Marker, Popup, TileLayer, useMap} from "react-leaflet";
+import L, {LatLngExpression} from "leaflet";
 
-export default function LocationPage() {
+type LocationPageProps = {
+    locations: Location[]
+}
+
+export default function LocationPage(props: LocationPageProps) {
+    console.log(props.locations)
 
     function ResetCenterView(){
 
@@ -11,30 +20,33 @@ export default function LocationPage() {
             L.latLng(51.07380881233824, 10.366612768843467),
             map.getZoom(),{animate:true}
         )
-
         return null;
     }
+    //const locationCourt: LatLngExpression = [Number(props.location.lat),Number(props.location.lon)]
 
     const icon = L.icon({
         iconUrl:"./placeholder.png",
         iconSize: [20,20]
     })
 
-    const location: LatLngExpression = [50.95648438956642, 6.977469044747556]
-
     return (
-        <div className={"location"}>
-            <p> Location </p>
-            <MapContainer className={"map"} center={location} zoom={13}>
+        <div className={"background"}>
+            <h1 className={"Location-title"}> Locations </h1>
+            <MapContainer className={"map"} center={[51.07380881233824, 10.366612768843467]} zoom={5}>
                 <TileLayer
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
-                <Marker position={location} icon={icon}>
-                    <Popup>
-                        The Court is Yours!
-                    </Popup>
-                </Marker>
+                {props.locations.map((location)=> {
+                    return <>
+                            <Marker position={[location.lat, location.lon]} icon={icon}>
+                                <Popup>
+                                    <p>{location.name}</p>
+                                    <img src={location.photo}/>
+                                </Popup>
+                            </Marker>
+                    </>
+                })}
                 <ResetCenterView/>
             </MapContainer>
         </div>

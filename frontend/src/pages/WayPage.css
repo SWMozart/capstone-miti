@@ -15,9 +15,19 @@
 .Way-title {
     font-family: "Snell Roundhand";
     font-size: 35px;
-    color: #000000;
-    margin-bottom: 70%;
+    color: #ffffff;
+}
+.Way-title {
+    background-color: black;
+    width: 100%;
+    opacity: 75%;
+}
+.Navbar {
+    margin-top: 50%;
+    justify-content: center;
+    align-items: center;
 }
 .logout {
+    justify-content: left;
     color: black;
 }

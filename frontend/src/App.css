@@ -1,4 +1,4 @@
-.buttonflipper {
+.Start {
   background-image: url("https://www.metropolnews.info/wp-content/uploads/2022/05/photo-1518407613690-d9fc990e795f-534x462.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -19,7 +19,7 @@
   color: #ffffff;
   width: 75%;
   background-color: black;
-  margin: 1%;
+  margin: 2%;
 }
 .RB {
   font-family: "Snell Roundhand";
@@ -27,27 +27,24 @@
   color: #ffffff;
   width: 75%;
   background-color: black;
-  margin: 1%;
+  margin: 2%;
 }
-.GB1 {
-
-  margin: 1%;
-}
-.GB2 {
+.GB {
   font-family: "Snell Roundhand";
   font-size: 20px;
   color: black;
   width: 75%;
   background-color: white;
+  margin: 2%;
 }
 
 .back {
   min-height: 100vh;
   font-size: 20px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+
 }
 
 .login-as {
