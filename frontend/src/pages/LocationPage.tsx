@@ -1,10 +1,9 @@
 import "leaflet/dist/leaflet.css";
 import './LocationPage.css';
 import React from "react";
-import LocMap from "../components/LocMap";
 import {Location} from "../model/Location";
 import {MapContainer, Marker, Popup, TileLayer, useMap} from "react-leaflet";
-import L, {LatLngExpression} from "leaflet";
+import L from "leaflet";
 
 type LocationPageProps = {
     locations: Location[]
@@ -22,7 +21,6 @@ export default function LocationPage(props: LocationPageProps) {
         )
         return null;
     }
-    //const locationCourt: LatLngExpression = [Number(props.location.lat),Number(props.location.lon)]
 
     const icon = L.icon({
         iconUrl:"./placeholder.png",
@@ -42,7 +40,7 @@ export default function LocationPage(props: LocationPageProps) {
                             <Marker position={[location.lat, location.lon]} icon={icon}>
                                 <Popup>
                                     <p>{location.name}</p>
-                                    <img src={location.photo}/>
+                                    <img src={location.photo} alt={"no picture found"}/>
                                 </Popup>
                             </Marker>
                     </>
