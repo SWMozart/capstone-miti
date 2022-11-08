@@ -29,24 +29,30 @@ export default function LocationPage(props: LocationPageProps) {
 
     return (
         <div className={"background"}>
-            <h1 className={"Location-title"}> Locations </h1>
-            <MapContainer className={"map"} center={[51.07380881233824, 10.366612768843467]} zoom={5}>
-                <TileLayer
-                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                />
-                {props.locations.map((location)=> {
-                    return <>
-                            <Marker position={[location.lat, location.lon]} icon={icon}>
-                                <Popup>
-                                    <p>{location.name}</p>
-                                    <img src={location.photo} alt={"no picture found"}/>
-                                </Popup>
-                            </Marker>
-                    </>
-                })}
-                <ResetCenterView/>
-            </MapContainer>
+            <div className={"loc-header"}>
+            <div className={"title"}>
+                <h1> Locations </h1>
+            </div>
+            <div className={"map"}>
+                <MapContainer className={"map-container"} center={[51.07380881233824, 10.366612768843467]} zoom={5}>
+                    <TileLayer
+                        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                    />
+                    {props.locations.map((location)=> {
+                        return <>
+                                <Marker position={[location.lat, location.lon]} icon={icon}>
+                                    <Popup className={"Popup"}>
+                                        <p>{location.name}</p>
+                                        <img className={"photo"} src={location.photo} alt={"Location"}/>
+                                    </Popup>
+                                </Marker>
+                        </>
+                    })}
+                    <ResetCenterView/>
+                </MapContainer>
+            </div>
+            </div>
         </div>
     )
 }

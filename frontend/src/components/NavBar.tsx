@@ -8,17 +8,9 @@ export default function NavBar(){
         <Navbar className={"navbar"} bg="light" variant="light">
             <Container className={"navbar-container"}>
                 <Nav className={"me-auto"}>
-                    <div className={"navnav"}>
-                        <div className={"Loc1"}>
-                        <Nav.Link href="#/location"><button className={"Loc2"}>Locations</button></Nav.Link>
-                        </div>
-                    <div className={"Tra1"}>
-                    <Nav.Link href="#/training"><button className={"Tra2"}>Training</button></Nav.Link>
-                    </div>
-                    <div className={"Sho1"}>
-                    <Nav.Link href="#/shops"><button className={"Sho2"}>Shops</button></Nav.Link>
-                    </div>
-                    </div>
+                    <Nav.Link href="#/location"><button className={"Loc"}>Locations</button></Nav.Link>
+                    <Nav.Link href="#/training"><button className={"Tra"}>Training</button></Nav.Link>
+                    <Nav.Link href="#/shops"><button className={"Sho"}>Shops</button></Nav.Link>
                 </Nav>
             </Container>
         </Navbar>

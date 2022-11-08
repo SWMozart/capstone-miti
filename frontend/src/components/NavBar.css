@@ -1,46 +1,23 @@
-.Navbar {
+.navbar {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
+    margin: auto;
 }
-.navnav {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-}
-.Loc1 {
-    width: 100%;
-    margin: 1%;
-}
-.Loc2 {
-    font-family: "Snell Roundhand";
+.Loc {
+    font-family: "Snell Roundhand", serif;
     color: white;
     background-color: black;
     font-size: 20px;
-    width: 100%;
 }
-.Tra1 {
-    width: 100%;
-    margin: 1%;
-}
-.Tra2 {
-    font-family: "Snell Roundhand";
+.Tra {
+    font-family: "Snell Roundhand", serif;
     color: white;
     background-color: black;
     font-size: 20px;
-    width: 100%;
 }
-.Sho1 {
-    width: 100%;
-    margin: 1%;
-}
-.Sho2 {
-    font-family: "Snell Roundhand";
+.Sho {
+    font-family: "Snell Roundhand", serif;
     color: black;
     background-color: white;
     font-size: 20px;
-    width: 100%;
-
 }
