@@ -12,7 +12,6 @@ type LocationPageProps = {
     logout: () => void
 }
 
-
 export default function LocationPage(props: LocationPageProps) {
 
     const navigate = useNavigate();
