@@ -8,8 +8,8 @@ export default function NavBar(){
         <Navbar className={"navbar"} bg="light" variant="light">
             <Container className={"navbar-container"}>
                 <Nav className={"me-auto"}>
-                    <Nav.Link href="#/location"><button className={"Loc"}>Locations</button></Nav.Link>
-                    <Nav.Link href="#/training"><button className={"Tra"}>Training</button></Nav.Link>
+                    <Nav.Link href="#/location"><button className={"Loc"}>Courts</button></Nav.Link>
+                    <Nav.Link href="#/training"><button className={"Tra"}>Coaches</button></Nav.Link>
                     <Nav.Link href="#/shops"><button className={"Sho"}>Shops</button></Nav.Link>
                 </Nav>
             </Container>

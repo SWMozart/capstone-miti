@@ -20,14 +20,14 @@ export default function LoginPage() {
             {!me &&
     <ReactCardFlip isFlipped={isFlipped} flipDirection={"horizontal"}>
 
-        <div className={"front"}>
+        <div className={"front-side"}>
     <button className={"LB"} onClick={handleLoginButton}>Login</button>
         <button className={"RB"} onClick={handleRegisterButton}>Sign Up</button>
             <button className={"GB"}>Guest</button>
         </div>
 
 
-    <div className={"back"}>
+    <div className={"back-side"}>
         {
             isLoginClick ?
                 <div className={"login-field"}>

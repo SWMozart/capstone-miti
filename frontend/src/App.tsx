@@ -30,9 +30,9 @@ function App() {
             <Routes>
                 <Route path ={"/"} element = {<LoginPage/>}/>
                 <Route path ={"/way"} element = {<WayPage logout={handleLogout}/>}/>
-                <Route path ={"/location"} element = {<LocationPage locations={locations}/>}/>
-                <Route path ={"/training"} element = {<TrainingPage/>}/>
-                <Route path ={"/shops"} element = {<ShopPage/>}/>
+                <Route path ={"/location"} element = {<LocationPage locations={locations} logout={handleLogout}/>}/>
+                <Route path ={"/training"} element = {<TrainingPage logout={handleLogout}/>}/>
+                <Route path ={"/shops"} element = {<ShopPage logout={handleLogout}/>}/>
             </Routes>
         </HashRouter>
     );

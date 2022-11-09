@@ -1,5 +1,5 @@
 .background {
-    background-image: url("https://static.vecteezy.com/system/resources/thumbnails/006/469/232/small/abstract-white-background-with-halftone-texture-free-vector.jpg");
+    background-image: url("https://t4.ftcdn.net/jpg/03/11/58/53/360_F_311585337_F1j9E8Q9BUP5gvcEBb8KHIw0Nn5sgHYl.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -12,13 +12,17 @@
     align-items: center;
 }
 .title {
-    font-family: "Snell Roundhand", serif;
-    font-size: 20px;
-    color: #ffffff;
-    background-color: black;
-    opacity: 75%;
-    text-align: center;
+    font-family: "Snell Roundhand", Arial, serif;
     width: 100%;
+}
+.loc-title {
+    font-family: "Snell Roundhand", Arial, serif;
+    font-size: 25px;
+    color: #ffffff;
+    text-align: center;
+    background-color: black;
+    width: 100%;
+    opacity: 75%;
 }
 .map {
     display: flex;
@@ -26,17 +30,38 @@
 }
 .map-container {
     align-items: center;
-    width: 85%;
-    height: 40%;
+    width: 90%;
+    height: 35%;
     position: absolute;
 }
 .Popup {
-    max-width: 300px;
-    max-height: 200px;
+    max-width: max-content;
+    max-height: max-content;
+}
+.loc-name {
+    font-size: 15px;
 }
 .photo {
     max-width: 170px;
     max-height: 150px;
 }
+.button-header {
+    display: flex;
+    justify-content: space-between;
+}
+.button-back {
+    font-family: "Snell Roundhand", serif;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: black;
+    opacity: 75%;
+    border: none;
+}
 .logout {
+    font-family: "Snell Roundhand", serif;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: black;
+    opacity: 75%;
+    border: none;
 }

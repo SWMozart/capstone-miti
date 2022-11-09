@@ -5,7 +5,7 @@
   background-position: center;
   background-attachment: fixed;
 }
-.front {
+.front-side {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -19,6 +19,8 @@
   width: 75%;
   background-color: black;
   margin: 2%;
+  border: none;
+  opacity: 75%;
 }
 .RB {
   font-family: "Snell Roundhand", serif;
@@ -27,6 +29,8 @@
   width: 75%;
   background-color: black;
   margin: 2%;
+  border: none;
+  opacity: 75%;
 }
 .GB {
   font-family: "Snell Roundhand", serif;
@@ -35,13 +39,16 @@
   width: 75%;
   background-color: white;
   margin: 2%;
+  border: none;
+  opacity: 75%;
 }
-.back {
+.back-side {
   min-height: 100vh;
   font-size: 20px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 .login-as {
   background-color: orangered;

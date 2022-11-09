@@ -1,15 +1,46 @@
-.Shop {
-    background-image: url("https://static.vecteezy.com/system/resources/thumbnails/006/469/232/small/abstract-white-background-with-halftone-texture-free-vector.jpg");
+.background-sho {
+    background-image: url("https://t4.ftcdn.net/jpg/03/11/58/53/360_F_311585337_F1j9E8Q9BUP5gvcEBb8KHIw0Nn5sgHYl.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
 }
-.Shop-title {
-    justify-content: center;
+.sho-header {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
     align-items: center;
+}
+.sho-title {
+    font-family: "Snell Roundhand", Arial, serif;
+    width: 100%;
+}
+.sho-title {
+    font-family: "Snell Roundhand", Arial, serif;
+    font-size: 25px;
+    color: #ffffff;
+    text-align: center;
+    background-color: black;
+    width: 100%;
+    opacity: 75%;
+}
+.button-header {
+    display: flex;
+    justify-content: space-between;
+}
+.button-back {
     font-family: "Snell Roundhand", serif;
-    font-size: 35px;
+    font-size: 20px;
     color: #ffffff;
     background-color: black;
+    opacity: 75%;
+    border: none;
+}
+.logout {
+    font-family: "Snell Roundhand", serif;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: black;
+    opacity: 75%;
+    border: none;
 }
