@@ -12,6 +12,7 @@ type LocationPageProps = {
     logout: () => void
 }
 
+
 export default function LocationPage(props: LocationPageProps) {
 
     const navigate = useNavigate();
@@ -32,6 +33,7 @@ export default function LocationPage(props: LocationPageProps) {
         iconUrl:"./placeholder.png",
         iconSize: [20,20]
     })
+
 
     return (
         <div className={"background"}>
