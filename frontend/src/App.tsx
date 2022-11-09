@@ -24,7 +24,6 @@ function App() {
         getAllLocations()
     },[])
 
-
     return (
         <HashRouter>
             <Routes>
