@@ -1,14 +1,16 @@
 import React from "react";
 import {Container, Nav, Navbar} from "react-bootstrap";
+import "./NavBar.css";
+
 
 export default function NavBar(){
     return(
         <Navbar className={"navbar"} bg="light" variant="light">
             <Container className={"navbar-container"}>
                 <Nav className={"me-auto"}>
-                    <Nav.Link href="#/place">Location</Nav.Link>
-                    <Nav.Link href="#/school">School</Nav.Link>
-                    <Nav.Link href="#/shops">Shop</Nav.Link>
+                    <Nav.Link href="#/location"><button className={"Loc"}>Courts</button></Nav.Link>
+                    <Nav.Link href="#/training"><button className={"Tra"}>Coaches</button></Nav.Link>
+                    <Nav.Link href="#/shops"><button className={"Sho"}>Shops</button></Nav.Link>
                 </Nav>
             </Container>
         </Navbar>
