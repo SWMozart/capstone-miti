@@ -13,15 +13,25 @@ export default function TrainingPage(props: TrainingPageProps) {
 
 
     return (
-        <div className="background-tra">
+        <>
+        <div className={"background-tra"}>
             <div className={"button-header"}>
-                <button className={"button-back"} onClick={() => navigate(-1)}>back</button>
-                <NavLink href="#/"> <button className={"logout"} onClick={props.logout}>LogOut</button> </NavLink>
+                <button className={"button-back"} onClick={() => navigate(-1)}><i className="fa-solid fa-backward"></i></button>
+                <NavLink href="#/"> <button className={"logout"} onClick={props.logout}><i
+                    className="fa-solid fa-right-from-bracket"></i></button> </NavLink>
             </div>
-            <div className="tra-header">
+            <div className={"tra-header"}>
                 <h1 className={"tra-title"}> Trainings </h1>
-
+            </div>
+            <div className={"player"}>
+                <h3 className={"vid-title"}>Be A Baller</h3>
+                <iframe className={""} width="400" height="300"
+                    src="https://www.youtube.com/embed/videoseries?list=PL-TUzaTzchzgulFcuZRw3T4fETWtMZIsr"
+                    title="YouTube video player" frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen></iframe>
             </div>
         </div>
+        </>
     )
 }

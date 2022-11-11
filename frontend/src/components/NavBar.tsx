@@ -9,7 +9,7 @@ export default function NavBar(){
             <Container className={"navbar-container"}>
                 <Nav className={"me-auto"}>
                     <Nav.Link href="#/location"><button className={"Loc"}>Courts</button></Nav.Link>
-                    <Nav.Link href="#/training"><button className={"Tra"}>Coaches</button></Nav.Link>
+                    <Nav.Link href="#/training"><button className={"Tra"}>Trainings</button></Nav.Link>
                     <Nav.Link href="#/shops"><button className={"Sho"}>Shops</button></Nav.Link>
                 </Nav>
             </Container>
