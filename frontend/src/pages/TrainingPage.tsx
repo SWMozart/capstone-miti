@@ -14,7 +14,7 @@ export default function TrainingPage(props: TrainingPageProps) {
 
     return (
         <>
-        <div className={"background-tra"}>
+        <body className={"background-tra"}>
             <div className={"button-header"}>
                 <button className={"button-back"} onClick={() => navigate(-1)}><i className="fa-solid fa-backward"></i></button>
                 <NavLink href="#/"> <button className={"logout"} onClick={props.logout}><i
@@ -31,7 +31,7 @@ export default function TrainingPage(props: TrainingPageProps) {
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen></iframe>
             </div>
-        </div>
+        </body>
         </>
     )
 }
