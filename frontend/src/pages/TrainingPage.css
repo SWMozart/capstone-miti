@@ -5,38 +5,42 @@
     background-position: center;
     background-attachment: fixed;
 }
+.button-header {
+    display: flex;
+    justify-content: space-between;
+}
+.button-back {
+    color: #000000;
+    opacity: 75%;
+}
+.logout {
+    color: #000000;
+    opacity: 75%;
+}
 .tra-header {
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 .tra-title {
     font-family: "Snell Roundhand", Arial, serif;
-    font-size: 25px;
+    font-size: 35px;
     color: #ffffff;
     text-align: center;
     background-color: black;
     width: 100%;
     opacity: 75%;
 }
-.button-header {
+.player {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
 }
-.button-back {
-    font-family: "Snell Roundhand", serif;
-    font-size: 20px;
-    color: #ffffff;
-    background-color: black;
-    opacity: 75%;
-    border: none;
+.vid-title {
+    font-family: "Snell Roundhand", Arial, serif;
+    font-size: 40px;
+    color: #000000;
+    margin-bottom: auto;
 }
-.logout {
-    font-family: "Snell Roundhand", serif;
-    font-size: 20px;
-    color: #ffffff;
-    background-color: black;
-    opacity: 75%;
-    border: none;
+iframe {
 }
