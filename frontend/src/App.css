@@ -5,6 +5,11 @@
   background-position: center;
   background-attachment: fixed;
 }
+.logo {
+  display: flex;
+  justify-content: center;
+  height: 220px;
+}
 .front-side {
   min-height: 100vh;
   display: flex;
