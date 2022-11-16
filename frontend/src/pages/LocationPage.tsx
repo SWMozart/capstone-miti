@@ -7,6 +7,7 @@ import L from "leaflet";
 import {useNavigate} from "react-router-dom";
 import {NavLink} from "react-bootstrap";
 
+
 type LocationPageProps = {
     locations: Location[]
     logout: () => void
@@ -15,14 +16,10 @@ type LocationPageProps = {
 
 export default function LocationPage(props: LocationPageProps) {
 
-
-
     const [filterText, setFilterText] = useState("")
     const filteredNames = props.locations.filter((names) => names.name.toLowerCase().includes(filterText.toLowerCase()))
     console.log(filteredNames)
     let hasInput:boolean = filteredNames.length > 0;
-
-
 
     const navigate = useNavigate();
 
@@ -65,19 +62,9 @@ export default function LocationPage(props: LocationPageProps) {
             <input className={"field"} onChange={(event) => setFilterText(event.target.value)}/>
                 {hasInput ?
                     <>
-                        <div className={"citylist"}>
-                        {filteredNames.map((filteredName)=>{
-                            return (
-                                <ul>
-                                    <li>
-                                        {filteredName.name}
-                                    </li>
-                                </ul>
-                            )
-                        })}
-                        </div>
+
                     <div className={"map"}>
-                    <MapContainer className={"map-container"} center={[51.07380881233824, 10.366612768843467]} zoom={5}>
+                    <MapContainer  className={"map-container"} center={[51.07380881233824, 10.366612768843467]} zoom={5}>
                         <TileLayer
                             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -97,7 +84,19 @@ export default function LocationPage(props: LocationPageProps) {
                         )}
                             <ResetCenterView/>
                     </MapContainer>
+                        <div className={"citylist"}>
+                            {filteredNames.map((filteredName)=>{
+                                return (
+                                    <ul>
+                                        <li>
+                                            {filteredName.name}
+                                        </li>
+                                    </ul>
+                                )
+                            })}
+                        </div>
                     </div>
+
                     </>
                     :
                     <div className={"map"}>
