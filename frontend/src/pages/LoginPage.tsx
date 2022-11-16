@@ -2,6 +2,7 @@ import ReactCardFlip from "react-card-flip";
 import {Link} from "react-router-dom";
 import React from "react";
 import useLogins from "../hook/useLogins";
+import logo_makeittakeit from "../images/logo_makeittakeit.png"
 
 export default function LoginPage() {
 
@@ -17,6 +18,11 @@ export default function LoginPage() {
 
     return (
         <div className={"Start"}>
+
+            <div className={"logo"}>
+                <img src={logo_makeittakeit}/>
+            </div>
+
             {!me &&
     <ReactCardFlip isFlipped={isFlipped} flipDirection={"horizontal"}>
 

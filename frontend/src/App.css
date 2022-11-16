@@ -4,9 +4,15 @@
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  min-height: 1000px;
+}
+.logo {
+  display: flex;
+  justify-content: center;
+  height: 280px;
 }
 .front-side {
-  min-height: 100vh;
+  min-height: 60vh;
   display: flex;
   flex-direction: column;
   align-items: center;
