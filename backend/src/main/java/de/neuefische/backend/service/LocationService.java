@@ -12,7 +12,7 @@ import java.util.List;
 public class LocationService {
 
     private final LocationRepo locationRepo;
-    private IdService idService;
+    private final IdService idService;
 
     @Autowired
     public LocationService(LocationRepo locationRepo, IdService idService) {

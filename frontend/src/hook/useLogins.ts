@@ -1,5 +1,6 @@
 import {useState} from "react";
 import axios from "axios";
+import {toast} from "react-toastify";
 
 export default function useLogins() {
 
@@ -28,13 +29,42 @@ export default function useLogins() {
                 .then((data) => setMe(data))
                 .then(() => setUsername(""))
                 .then(() => setPassword(""))
+                .then(() => toast.success ("U Checked In", {
+                    position: "top-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "dark",
+                }))
 
-                .catch(() => alert("AIRBALL! Check UR Username/Password"))
+                .catch(() => toast.error("AIRBALL! Check UR Username/Password", {
+                    position: "top-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "dark",
+                }))
     }
 
     function handleLogout() {
         axios.get("api/user/logout")
             .then(() => setMe(""))
+            .then(() => toast.success ("U Checked Out", {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+            }))
     }
 
     function handleRegisterButton() {
@@ -48,6 +78,16 @@ export default function useLogins() {
         })
             .then(() => setNewUsername(""))
             .then(() => setNewPassword(""))
+            .then(() => toast.success ("Make It Take It", {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+            }))
     }
 
     return {
