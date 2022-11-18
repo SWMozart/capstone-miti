@@ -25,11 +25,11 @@ export default function ShopPage(props: ShopPageProps) {
                 <h1 className={"sho-title"}> Shops </h1>
             </div>
             <div className={"shops"}>
-                <a href="https://www.nbastore.eu/de"><img src={"https://www.nbastore.eu/content/assets/__0-313318851018.3692.svg"} className={"shop"}/></a>
-                <a href="https://www.nike.com/de/jordan"><img src={"https://www.pngplay.com/wp-content/uploads/9/Air-Jordan-Logo-PNG-HD-Quality.png"} className={"shop"}/></a>
-                <a href="https://www.nike.com/de/basketball"><img src={"https://logos-world.net/wp-content/uploads/2020/04/Nike-Logo.png"} className={"shop"}/></a>
-                <a href="https://spalding-basketball.com/de/"><img src={"https://logodix.com/logo/1834307.png"} className={"shop"}/></a>
-                <a href="https://www.basketballshop24.de"><img src={"https://www.basketballshop24.de/themes/Frontend/WnsBasketballShop/frontend/_public/src/img/logos/logo--tablet.png"} className={"shop"}/></a>
+                <a href="https://www.nbastore.eu/de"><img src={"https://www.nbastore.eu/content/assets/__0-313318851018.3692.svg"} className={"shop"} alt={"Shop"}/></a>
+                <a href="https://www.nike.com/de/jordan"><img src={"https://www.pngplay.com/wp-content/uploads/9/Air-Jordan-Logo-PNG-HD-Quality.png"} className={"shop"} alt={"Shop"}/></a>
+                <a href="https://www.nike.com/de/basketball"><img src={"https://logos-world.net/wp-content/uploads/2020/04/Nike-Logo.png"} className={"shop"} alt={"Shop"}/></a>
+                <a href="https://spalding-basketball.com/de/"><img src={"https://logodix.com/logo/1834307.png"} className={"shop"} alt={"Shop"}/></a>
+                <a href="https://www.basketballshop24.de"><img src={"https://www.basketballshop24.de/themes/Frontend/WnsBasketballShop/frontend/_public/src/img/logos/logo--tablet.png"} className={"shop"} alt={"Shop"}/></a>
             </div>
         </div>
     )
