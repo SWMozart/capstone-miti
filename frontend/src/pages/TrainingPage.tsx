@@ -25,8 +25,16 @@ export default function TrainingPage(props: TrainingPageProps) {
             </div>
             <div className={"player"}>
                 <h3 className={"vid-title"}>Be A Baller</h3>
-                <iframe className={""} width="400" height="300"
+                <iframe className={"iframe"} width="400" height="300"
                     src="https://www.youtube.com/embed/videoseries?list=PL-TUzaTzchzgulFcuZRw3T4fETWtMZIsr"
+                    title="YouTube video player" frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen></iframe>
+            </div>
+            <div className={"player"}>
+                <h3 className={"vid-title"}>Be A Pro</h3>
+                <iframe className={"iframe"} width="400" height="300"
+                    src="https://www.youtube.com/embed/7AXqXxQKBzA"
                     title="YouTube video player" frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen></iframe>

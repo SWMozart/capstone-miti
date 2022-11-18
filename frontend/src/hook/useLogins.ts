@@ -1,6 +1,7 @@
 import {useState} from "react";
 import axios from "axios";
 import {toast} from "react-toastify";
+import {useNavigate} from "react-router-dom";
 
 export default function useLogins() {
 
@@ -22,13 +23,13 @@ export default function useLogins() {
         setIsLoginClick(!isLoginClick)
         setIsFlipped((flipped) => !flipped)
     }
-    function handleLogin() {
-        if(username.length>0 && password.length>0)
-            axios.get("api/user/login", {auth: {username, password}})
+    function handleLogin(onSucces: () => void) {
+            return axios.get("api/user/login", {auth: {username, password}})
                 .then(response => response.data)
                 .then((data) => setMe(data))
                 .then(() => setUsername(""))
                 .then(() => setPassword(""))
+                .then(onSucces)
                 .then(() => toast.success ("U Checked In", {
                     position: "top-right",
                     autoClose: 5000,
@@ -39,7 +40,6 @@ export default function useLogins() {
                     progress: undefined,
                     theme: "dark",
                 }))
-
                 .catch(() => toast.error("AIRBALL! Check UR Username/Password", {
                     position: "top-right",
                     autoClose: 5000,
@@ -50,6 +50,7 @@ export default function useLogins() {
                     progress: undefined,
                     theme: "dark",
                 }))
+
     }
 
     function handleLogout() {
@@ -71,13 +72,14 @@ export default function useLogins() {
         setIsRegisterClick(!isRegisterClick)
         setIsFlipped((flipped) => !flipped)
     }
-    function  handleRegister() {
-        axios.post("api/user/register", {
+    function  handleRegister(onSucces: () => void) {
+        return axios.post("api/user/register", {
             username: newUsername,
             password: newPassword
         })
             .then(() => setNewUsername(""))
             .then(() => setNewPassword(""))
+            .then(onSucces)
             .then(() => toast.success ("Make It Take It", {
                 position: "top-right",
                 autoClose: 5000,

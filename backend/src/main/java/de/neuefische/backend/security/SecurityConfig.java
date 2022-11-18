@@ -26,7 +26,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     public void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/api/user/guest").hasRole("guest")
+                .antMatchers("/api/user/guest").permitAll()
                 .antMatchers("/api/user/rate").authenticated()
                 .antMatchers("/api/user/login").permitAll()
                 .antMatchers("/api/user/register").permitAll()
