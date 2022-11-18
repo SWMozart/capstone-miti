@@ -4,6 +4,7 @@
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    min-height: 1000px;
 }
 .button-header {
     display: flex;
@@ -38,9 +39,16 @@
 }
 .vid-title {
     font-family: "Snell Roundhand", Arial, serif;
-    font-size: 40px;
+    font-style: italic;
+    font-size: 23px;
     color: #000000;
-    margin-bottom: auto;
+    background-color: white;
+    margin-top: 10%;
+    padding: 3%;
+    border: black solid 1px;
+    border-radius: 20px;
+    opacity: 75%;
 }
-iframe {
+.iframe {
+    width: 95%;
 }

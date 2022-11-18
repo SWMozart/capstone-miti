@@ -1,5 +1,5 @@
 import ReactCardFlip from "react-card-flip";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import React from "react";
 import useLogins from "../hook/useLogins";
 import logo_makeittakeit from "../images/logo_makeittakeit.png"
@@ -15,6 +15,15 @@ export default function LoginPage() {
         newUsername, setNewUsername, newPassword, setNewPassword
     } = useLogins()
 
+    const navigate = useNavigate()
+
+
+    function onLogin() {
+        handleLogin(() => navigate("/way"))
+    }
+    function onRegister() {
+        handleRegister(() => navigate("/way"))
+    }
 
     return (
         <div className={"Start"}>
@@ -40,14 +49,14 @@ export default function LoginPage() {
                     <input value={username} onChange={event => setUsername(event.target.value)}/>
                     <input type="password" value={password}
            onChange={event => setPassword(event.target.value)}/>
-                    <Link to={"/way"}><button className={"done"} onClick={handleLogin}>Done</button></Link>
+                    <button className={"done"} onClick={onLogin}>Done</button>
                 </div>
 :
             <div className={"register"}>
                 <input value={newUsername} onChange={event => setNewUsername(event.target.value)}/>
                 <input type="password" value={newPassword}
                        onChange={event => setNewPassword(event.target.value)}/>
-                <Link to={"/way"}><button className={"done"} onClick={handleRegister}>Done</button></Link>
+                <Link to={"/way"}><button className={"done"} onClick={onRegister}>Done</button></Link>
             </div>
         }
     </div>
