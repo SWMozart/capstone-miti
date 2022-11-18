@@ -29,25 +29,25 @@ export default function LoginPage() {
         <div className={"front-side"}>
     <button className={"LB"} onClick={handleLoginButton}>Login</button>
         <button className={"RB"} onClick={handleRegisterButton}>Sign Up</button>
-            <button className={"GB"}>Guest</button>
+            <Link to={"/way"}><button className={"GB"}>Guest</button></Link>
         </div>
 
 
     <div className={"back-side"}>
         {
             isLoginClick ?
-                <div className={"login-field"}>
+                <div className={"register"}>
                     <input value={username} onChange={event => setUsername(event.target.value)}/>
                     <input type="password" value={password}
            onChange={event => setPassword(event.target.value)}/>
-                    <Link to={"/way"}><button onClick={handleLogin}>Done</button></Link>
+                    <Link to={"/way"}><button className={"done"} onClick={handleLogin}>Done</button></Link>
                 </div>
 :
-            <div className={"register-field"}>
+            <div className={"register"}>
                 <input value={newUsername} onChange={event => setNewUsername(event.target.value)}/>
                 <input type="password" value={newPassword}
                        onChange={event => setNewPassword(event.target.value)}/>
-                <Link to={"/way"}><button onClick={handleRegister}>Done</button></Link>
+                <Link to={"/way"}><button className={"done"} onClick={handleRegister}>Done</button></Link>
             </div>
         }
     </div>
@@ -55,9 +55,9 @@ export default function LoginPage() {
             }
     {me &&
     <>
-    <div >
+    <div>
         <p>{me}</p>
-    <button className={"login-as"} onClick={handleLogout}>LogOut</button>
+        <button className={"login-as"} onClick={handleLogout}>LogOut</button>
     </div>
     </>
     }

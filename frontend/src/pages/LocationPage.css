@@ -26,15 +26,19 @@
     font-family: "Apple SD Gothic Neo", serif;
     font-size: 22px;
     color: #000000;
-    display: flex;
-    justify-content: center;
+    margin: auto;
+    margin-left: 43px;
 }
 .field {
     font-family: "Apple Braille", serif;
-    margin-bottom: 2%;
-    display: flex;
-    justify-content: center;
-    margin-left: 10%;
+
+
+}
+.addcourt {
+    font-family: "Apple Braille", serif;
+    color: #ffffff;
+    background-color: black;
+    opacity: 75%;
 }
 .citylist {
     font-family: "Apple SD Gothic Neo", serif;
@@ -48,7 +52,7 @@
     opacity: 75%;
 }
 .map-container {
-    height: 300px;
+    height: 300px;;
 }
 .Popup {
     max-width: 2000px;
@@ -64,6 +68,7 @@
 .button-header {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 2%;
 }
 .button-back {
     font-family: "Snell Roundhand", serif;

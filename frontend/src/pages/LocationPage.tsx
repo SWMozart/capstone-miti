@@ -1,15 +1,20 @@
 import "leaflet/dist/leaflet.css";
 import './LocationPage.css';
 import React, { useState } from "react";
-import {Location} from "../model/Location";
+import {Court} from "../model/Court";
 import {MapContainer, Marker, Popup, TileLayer, useMap} from "react-leaflet";
 import L from "leaflet";
 import {useNavigate} from "react-router-dom";
 import {NavLink} from "react-bootstrap";
+import AddNewCourtModal from "../components/AddNewCourtModal";
+import {Cloudinary} from "@cloudinary/url-gen";
+import {thumbnail} from "@cloudinary/url-gen/actions/resize";
+import {byRadius} from "@cloudinary/url-gen/actions/roundCorners";
+import {AdvancedImage} from "@cloudinary/react";
 
 
 type LocationPageProps = {
-    locations: Location[]
+    locations: Court[]
     logout: () => void
 }
 
@@ -22,6 +27,21 @@ export default function LocationPage(props: LocationPageProps) {
     let hasInput:boolean = filteredNames.length > 0;
 
     const navigate = useNavigate();
+
+    const [isDisplay, setIsDisplay] = useState(true);
+    const [addNewCourtModalOn, setAddNewCourtModalOn] = useState(false);
+
+    const cld = new Cloudinary({cloud: {cloudName:"ds9ndbe2v"}})
+
+
+    const addNewCourt = ()=>{
+        setIsDisplay(!isDisplay)
+        setAddNewCourtModalOn(true)
+    }
+    const resetOnHide = ()=>{
+        setAddNewCourtModalOn(false)
+        setIsDisplay(!isDisplay)
+    }
 
     console.log(props.locations)
 
@@ -56,26 +76,42 @@ export default function LocationPage(props: LocationPageProps) {
             <div>
             {hasInput ?
                 <h4 className="title-city"> Choose UR City </h4>
-                :
+                    :
                 <h4 className="title-city"> Currently No Court Created! </h4>}
 
-            <input className={"field"} onChange={(event) => setFilterText(event.target.value)}/>
+                <input className={"field"} onChange={(event) => setFilterText(event.target.value)}/>
+
+                <button className={"addcourt"} onClick={addNewCourt}>
+                    Marks UR Court
+                </button>
+                <div>
+                    {
+                        !isDisplay &&
+                        <div>
+                            <AddNewCourtModal show={addNewCourtModalOn} onHide={resetOnHide}/>
+                        </div>
+                    }
+                </div>
+
                 {hasInput ?
                     <>
 
-                    <div className={"map"}>
+                    <div className={"map-list"}>
                     <MapContainer  className={"map-container"} center={[51.07380881233824, 10.366612768843467]} zoom={5}>
                         <TileLayer
                             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                         />
                         {filteredNames.map((filteredName)=>{
+                                const myImage = cld.image(filteredName.photo)
+                                myImage.resize(thumbnail().width(170).height(150))
+                                    .roundCorners(byRadius(20))
                             return(
                                 <>
                                     <Marker position={[filteredName.lat, filteredName.lon]} icon={icon}>
                                         <Popup className={"Popup"}>
                                             <p className={"loc-name"}>{filteredName.name}</p>
-                                            <img className={"photo"} src={filteredName.photo} alt={"courts"}/>
+                                            <AdvancedImage cldImg={myImage} />
                                         </Popup>
                                     </Marker>
                                 </>
