@@ -21,6 +21,7 @@ export default function LoginPage() {
     function onLogin() {
         handleLogin(() => navigate("/way"))
     }
+
     function onRegister() {
         handleRegister(() => navigate("/way"))
     }
@@ -29,7 +30,7 @@ export default function LoginPage() {
         <div className={"Start"}>
 
             <div className={"logo"}>
-                <img src={logo_makeittakeit}/>
+                <img src={logo_makeittakeit} alt={"logo"}/>
             </div>
 
             {!me &&
