@@ -21,6 +21,7 @@ export default function LoginPage() {
     function onLogin() {
         handleLogin(() => navigate("/way"))
     }
+
     function onRegister() {
         handleRegister(() => navigate("/way"))
     }
